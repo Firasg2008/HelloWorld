@@ -1,4 +1,7 @@
 FROM openjdk:21-jdk
-EXPOSE 8080
-ADD TARGET/HelloWorld.jar HelloWorld.jar
-ENTRYPOINT [ "java", "-jar", "HelloWorld.jar" ]
+WORKDIR /Users/firas.jabbas/Desktop/devops/main/main/src/main/java/com/example/main
+COPY .mvn/ .mvn
+COPY src ./src
+#RUN ./mvnw package -DskipTests
+EXPOSE 8081
+CMD ["java", "-jar", "target/helloworld.jar"]
